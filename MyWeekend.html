@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Weekend Plan</title>
+
+  <!-- Google Fonts: a warm display font + a clean body font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ---- Color palette & basics ---- */
+    :root {
+      --cream: #fdf6ec;
+      --ink: #2b2118;
+      --terracotta: #c45a3a;
+      --sage: #7a8c69;
+      --sun: #e8a93c;
+      --line: #e5d8c3;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ---- Header ---- */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin: 0;
+      color: var(--terracotta);
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      font-style: italic;
+      font-family: 'Fraunces', serif;
+      color: var(--sage);
+      margin-top: 8px;
+    }
+
+    /* ---- Day cards ---- */
+    .day {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(196, 90, 58, 0.06);
+    }
+
+    .day h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .day h2 .emoji { font-size: 1.5rem; }
+
+    /* ---- Task list (checkboxes) ---- */
+    ul.tasks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.tasks li {
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    ul.tasks li:last-child { border-bottom: none; }
+
+    ul.tasks input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--terracotta);
+      cursor: pointer;
+    }
+
+    ul.tasks label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    /* When a checkbox is checked, cross out its label */
+    ul.tasks input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--sage);
+    }
+
+    .time {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      color: var(--sun);
+      min-width: 60px;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: var(--sage);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h1>My Weekend</h1>
+      <p>— a little plan for two good days —</p>
+    </header>
+
+    <!-- SATURDAY -->
+    <section class="day">
+      <h2><span class="emoji">☀️</span> Saturday</h2>
+      <ul class="tasks">
+        <li>
+          <input type="checkbox" id="sat1" />
+          <span class="time">9:00</span>
+          <label for="sat1">Long breakfast & coffee</label>
+        </li>
+        <li>
+          <input type="checkbox" id="sat2" />
+          <span class="time">11:00</span>
+          <label for="sat2">Walk in the park</label>
+        </li>
+        <li>
+          <input type="checkbox" id="sat3" />
+          <span class="time">14:00</span>
+          <label for="sat3">Grocery shopping</label>
+        </li>
+        <li>
+          <input type="checkbox" id="sat4" />
+          <span class="time">19:00</span>
+          <label for="sat4">Movie night</label>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SUNDAY -->
+    <section class="day">
+      <h2><span class="emoji">🌙</span> Sunday</h2>
+      <ul class="tasks">
+        <li>
+          <input type="checkbox" id="sun1" />
+          <span class="time">10:00</span>
+          <label for="sun1">Sleep in, read a book</label>
+        </li>
+        <li>
+          <input type="checkbox" id="sun2" />
+          <span class="time">13:00</span>
+          <label for="sun2">Lunch with friends</label>
+        </li>
+        <li>
+          <input type="checkbox" id="sun3" />
+          <span class="time">16:00</span>
+          <label for="sun3">Plan the week ahead</label>
+        </li>
+        <li>
+          <input type="checkbox" id="sun4" />
+          <span class="time">21:00</span>
+          <label for="sun4">Early sleep</label>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      Made by me · Hosted on GitHub 🐙
+    </footer>
+
+  </div>
+</body>
+</html>
